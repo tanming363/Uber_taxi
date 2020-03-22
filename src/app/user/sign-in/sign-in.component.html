@@ -1,0 +1,58 @@
+<div class="text-center p-2 mt-5">
+        <div class="card card-shadow card-radius col-md-4 mx-auto pt-3 mt-5 mb-3 border-0">
+                <h1 class="h2 mb-4 font-weight-normal mt-3">
+                        Sign In</h1>
+
+                <form class="form-signin mb-5" #signInForm="ngForm"
+                        (ngSubmit)="signInForm.valid && onSubmit(signInForm)">
+                        <div class="form-group">
+                                <input class="form-control rounded-0" type="text" name="email" #email="ngModel"
+                                        [(ngModel)]="model.email" placeholder="Email" [pattern]="emailRegex" required
+                                        [ngClass]="{'invalid-textbox' :signInForm.submitted && !email.valid }">
+
+                                <div class="mt-1 text-left">
+                                        <span class="text-danger"
+                                                *ngIf="signInForm.submitted && email.errors?.pattern">Invalid email
+                                                address.
+                                        </span>
+                                </div>
+                        </div>
+
+
+                        <div class="form-group">
+                                <input class="form-control rounded-0" type="password" name="password"
+                                        #password="ngModel" [(ngModel)]="model.password" placeholder="Password" required
+                                        minlength="4"
+                                        [ngClass]="{'invalid-textbox' :signInForm.submitted && !password.valid }">
+
+                                <div class="mt-1 text-left">
+                                        <span class="text-danger"
+                                                *ngIf="signInForm.submitted && password.errors?.minlength">Minimum 4
+                                                charecters.
+                                        </span>
+                                </div>
+                        </div>
+<!-- 
+
+                        <div class="checkbox mb-2 mt-3 float-left">
+                                <label>
+                                        <input type="checkbox" value="remember-me"> Remember me
+                                </label>
+                        </div> -->
+                        <button class="btn btn-lg btn-primary btn-block mb-3 rounded-0" type="submit"><i
+                                        class="fas fa-unlock-alt fa-xs"></i>&nbsp;Sign in</button>
+                        <span>
+                                <a routerLink="/" routerLinkActive="active">Forget
+                                        password</a>
+                        </span>
+                        <span class="ml-4">
+                                <a routerLink="/sign-up" routerLinkActive="active">Create Account</a>
+                        </span>
+                </form>
+                <!-- Error message -->
+                <div class="alert alert-danger text-center" *ngIf="serverErrorMessages">
+                        {{serverErrorMessages}}
+                </div>
+                <br>
+        </div>
+</div>

@@ -1,0 +1,69 @@
+<div class="m-5">
+        <div class="row mt-4">
+
+                <div class="card card-shadow col-3 border-0 pl-0">
+                        <ul class="pl-0 mt-3 border-left border-dark">
+                                <li class="side-nav-item">
+                                        <a class="side-nav-link" routerLink='/userProfile/profile' routerLinkActive="active"><i
+                                                        class="fas fa-user-circle"></i>&nbsp;&nbsp;Profile</a>
+                                </li>
+                                <div class="dropdown-divider"></div>
+                                <li class="side-nav-item">
+                                        <a class="side-nav-link" routerLink='/userProfile/vehicle' routerLinkActive="active"><i
+                                                        class="fas fa-taxi"></i>&nbsp;&nbsp;Vehicles</a>
+                                </li>
+                                <div class="dropdown-divider"></div>
+                                <li class="side-nav-item">
+                                        <a class="side-nav-link" routerLink='/userProfile/license' routerLinkActive="active"><i
+                                                        class="fas fa-certificate"></i>&nbsp;&nbsp;Licensing</a>
+                                </li>
+                                <div class="dropdown-divider"></div>
+                                <li class="side-nav-item">
+                                        <a class="side-nav-link" routerLink='/userProfile/document'
+                                                routerLinkActive="active"><i
+                                                        class="fas fa-file-pdf"></i>&nbsp;&nbsp;Documents</a>
+                                </li>
+                                <div class="dropdown-divider"></div>
+                                <li class="side-nav-item">
+                                        <a class="side-nav-link" routerLink='/userProfile/withdrawal'
+                                                routerLinkActive="active"><i
+                                                        class="fas fa-cog"></i>&nbsp;&nbsp;Withdrawal Settings</a>
+                                </li>
+                                <div class="dropdown-divider"></div>
+                                <li class="side-nav-item">
+                                        <a class="side-nav-link" routerLink='/userProfile/revenue' routerLinkActive="active"><i
+                                                        class="fas fa-history"></i>&nbsp;&nbsp;Revenue History</a>
+                                </li>
+                                <div class="dropdown-divider"></div>
+                                <li class="side-nav-item">
+                                        <a class="side-nav-link" routerLink='/userProfile/invoice-list'
+                                                routerLinkActive="active"><i
+                                                        class="fas fa-file-invoice-dollar"></i>&nbsp;&nbsp;Invoice
+                                                List</a>
+                                </li>
+                                <div class="dropdown-divider"></div>
+                                <li class="side-nav-item">
+                                        <a class="side-nav-link" routerLink='/userProfile/add-invoice'
+                                                routerLinkActive="active"><i
+                                                        class="fas fa-file-invoice-dollar"></i>&nbsp;&nbsp;Add
+                                                Invoice</a>
+                                </li>
+                                <div class="dropdown-divider"></div>
+                                <li class="side-nav-item">
+                                        <a class="side-nav-link" routerLink='/userProfile/parterns'
+                                                routerLinkActive="active"><i
+                                                        class="fas fa-handshake"></i>&nbsp;&nbsp;Partners</a>
+                                </li>
+                                <div class="dropdown-divider"></div>
+                                <li class="side-nav-item">
+                                        <a class="side-nav-link" routerLink='/userProfile/download'
+                                                routerLinkActive="active"><i
+                                                        class="fas fa-download"></i>&nbsp;&nbsp;Download</a>
+                                </li>
+                        </ul>
+                </div>
+                <div class="col-9">
+                        <router-outlet></router-outlet>
+                </div>
+        </div>
+</div>

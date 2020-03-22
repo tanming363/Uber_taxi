@@ -1,18 +1,28 @@
-.form-card {
-  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
-    0 1px 3px 0 rgba(0, 0, 0, 0.12);
+/* .navbar {
+  height: 65px;
+} */
+.navbar-nav .dropdown-menu {
+  box-shadow: 0 2px 10px rgba(8, 38, 76, 0.2);
+  border: 1px solid #d5dee5;
 }
-.form-signin {
-  width: 100%;
-  max-width: 100%;
-  padding: 15px;
-  margin: auto;
+.dropdown-item {
+  padding: 9px 15px !important;
+}
+.dropdown-menu a:hover {
+  color: #fff;
+  background-color: #1f62ff;
+}
+.nav-link {
+  font-size: 14px;
+}
+.nav-item .sign-in {
+  border: 1px dashed;
+}
+.btn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0rem rgba(255, 255, 255, 0.185);
 }
 
-.form-signin .form-control {
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  padding: 13px;
-  font-size: 16px;
+.btn-dark {
+  background: #000000;
 }

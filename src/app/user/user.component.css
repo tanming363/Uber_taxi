@@ -1,0 +1,39 @@
+.side-nav {
+  margin-bottom: 0;
+}
+.active {
+  background-color: #000000;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+}
+/* .side-nav-item .active {
+  border-left: 2px solid;
+} */
+/* ul { */
+  /* position: relative; */
+  /* border-left: 2px solid rgb(214, 214, 214); */
+  /* border-left: 2px solid; */
+  /* margin-bottom: 0;
+  padding: 1px 0; */
+  /* color: #000000;
+} */
+
+.border-dark{
+  color: #000000;
+}
+ul li {
+  list-style: none;
+  padding: 10px 0;
+}
+.side-nav-link {
+  padding-left: 12px;
+  margin: 12px;
+}
+a {
+  color: #000000;
+  text-decoration: none;
+}
+h6 {
+  font-size: 14px;
+}

@@ -1,0 +1,74 @@
+<div class="p-2 mt-5">
+        <div class="card card-shadow card-radius col-md-4 mx-auto pt-3 mb-3 mt-5 border-0">
+                <h1 class="h2 mb-4 font-weight-normal mt-3 text-center"> Sign Up</h1>
+
+                <form class="form-signin mb-3" #signUpForm="ngForm"
+                        (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
+                        <!-- Full Name -->
+                        <div class="form-group">
+                                <input class="form-control rounded-0" type="text" #fullName="ngModel"
+                                        [(ngModel)]="userService.selectedUser.fullName" name="fullName"
+                                        placeholder="Full Name" required
+                                        [ngClass]="{'invalid-textbox' :signUpForm.submitted && !fullName.valid }">
+                                <div class="mt-1">
+                                        <span class="text-danger text-left"
+                                                *ngIf="signUpForm.submitted && !fullName.valid">This field is required.
+                                        </span>
+                                </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                                <input type="text" class="form-control rounded-0" #email="ngModel"
+                                        [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Email"
+                                        required [pattern]="emailRegex"
+                                        [ngClass]="{'invalid-textbox' :signUpForm.submitted && !email.valid }">
+
+                                <div class="mt-1" *ngIf="signUpForm.submitted && email.errors">
+                                        <span class="text-danger text-left" *ngIf="email.errors.required">This
+                                                field is required.</span>
+
+                                        <span class="text-danger text-left" *ngIf="email.errors.pattern">Invalid email
+                                                address.</span>
+                                </div>
+                        </div>
+
+                        <!-- password -->
+                        <div class="form-group">
+                                <input type="password" class="form-control rounded-0" #password="ngModel"
+                                        [(ngModel)]="userService.selectedUser.password" name="password"
+                                        placeholder="Password" minlength="4" required
+                                        [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
+
+                                <div class="mt-1" *ngIf="signUpForm.submitted && password.errors">
+                                        <span class="text-danger text-left" *ngIf="password.errors.required">This field
+                                                is required.</span>
+
+                                        <span class="text-danger text-left" *ngIf="password.errors.minlength">Enter
+                                                atleast 4 characters.</span>
+                                </div>
+                        </div>
+
+                        <!-- button  -->
+                        <button class="btn btn-lg btn-primary btn-block mb-3 rounded-0" type="submit"
+                                [routerLink]="[ '/sign-up' ]" routerLinkActive="active">Sign up</button>
+                        <div class="text-center">
+                                <span>Have an account?</span>
+                                <a href="#" [routerLink]="[ '/sign-in' ]" routerLinkActive="active">
+                                        Sign in
+                                </a>
+                        </div>
+                </form>
+
+                <!-- Success message -->
+                <div class="alert alert-success  text-center" *ngIf="showSucessMessage">
+                        Saved successfully
+                </div>
+
+                <!-- Error message -->
+                <div class="alert alert-danger text-center" *ngIf="serverErrorMessages">
+                        {{serverErrorMessages}}
+                </div>
+                <br>
+        </div>
+</div>
